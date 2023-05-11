@@ -1,8 +1,17 @@
 {
-	"rewrites":[
-		{
-			"source": "/(.*)",
-			"destination": "app"
-		}
-	]
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/app.py" }
+  ],
+  "env": {
+    "FLASK_APP": "app.py",
+    "FLASK_ENV": "production",
+    "STATIC_DIR": "static"
+  }
 }
