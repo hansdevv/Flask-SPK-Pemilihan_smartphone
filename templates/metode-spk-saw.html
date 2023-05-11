@@ -1,0 +1,560 @@
+{% include 'include/head.html'%}
+{% include 'include/sidebar.html'%}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Simple Addictive Weighting</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Metode SPK</a></li>
+              <li class="breadcrumb-item active"><a href="/metodesaw">saw</a></li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="overlay">
+            <div class="loader"></div>
+          </div>
+          <div class="col-3">
+						<div class="card card-success collapsed-card">
+							<div class="card-header">
+								<strong>Tambah data dengan file</strong>
+								<div class="card-tools">
+									<button type="button" class="btn btn-tool" data-card-widget="collapse">
+										<i class="fas fa-plus"></i>
+									</button>
+								</div>
+							</div>
+							<div class="card-body">
+								<i class="fas fa-exclamation-triangle text-warning"> Coming soon!</i>
+								<!-- <form id="upload-form" enctype="multipart/form-data">
+										<div class="form-group">
+											<label for="file-input">Pilih file:</label>
+											<input type="file" class="form-control-file" id="file-input" name="file">
+										</div>
+										<div class="text-center">
+											<button type="submit" class="btn btn-app bg-secondary"><i class="fas fa-upload"><span> upload</span></i></button>
+										</div>
+								</form>
+								<div class="progress mt-3" style="display: none;">
+										<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0;"></div>
+								</div> -->
+							</div>
+							<!-- <div class="card-footer">
+								<blockquote class="quote-info">
+									<p>Ketentuan file :</p>
+									<ul>
+										<li>ukuran file <span class="badge badge-danger">max 10mb</span></li>
+										<li>Mengandung kolom <b>namaSmartphone</b><span class="badge badge-danger">(Rupiah)</span></li>
+										<li>Mengandung kolom <b>harga</b><span class="badge badge-danger">(Rupiah)</span></li>
+										<li>Mengandung kolom <b>RAM</b><span class="badge badge-danger">(GB)</span></li>
+										<li>Mengandung kolom <b>memoriInternal</b><span class="badge badge-danger">(GB)</span></li>
+										<li>Mengandung kolom <b>kameraDepan</b><span class="badge badge-danger">(MP)</span></li>
+										<li>Mengandung kolom <b>ukuranLayar</b><span class="badge badge-danger">(Inchi)</span></li>
+									</ul>
+								</blockquote>
+							</div> -->
+						</div>
+          </div>
+          <!-- /.col-6 -->
+					<div class="col-9">
+						<div class="card card-info text-center collapsed-card">
+							<div class="card-header">
+								<strong>Tambah Data</strong>
+								<div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+							</div>
+							<div class="card-body">
+								<form action="" id="form-tambah-data">
+									<div class="row">
+										<div class="form-group col-6">
+											<label for="harga-smartphone">Nama / Merk Smartphone<span class="badge badge-warning">Wajib diisi</span></label>
+											<input requires type="text" class="form-control" id="nama-smartphone" name="nama">
+										</div>
+										<div class="form-group col-6">
+											<label for="harga-smartphone">Harga (Juta Rupiah) <span class="badge badge-warning">Wajib diisi</span></label>
+											<input requires type="number" class="form-control" id="harga-smartphone" name="harga">
+											<span class="text-muted">Ex : 2000000</span>
+										</div>
+										<div class="form-group col-6">
+											<label for="ram-smartphone">RAM (GB) <span class="badge badge-warning">Wajib diisi</span></label>
+											<input requires type="number" class="form-control" id="ram-smartphone" name="ram">
+											<span class="text-muted">Ex : 8</span>
+										</div>
+										<div class="form-group col-6">
+											<label for="memori-internal-smartphone">Memori Internal (GB) <span class="badge badge-warning">Wajib diisi</span></label>
+											<input requires type="number" class="form-control" id="memori-internal-smartphone" name="memori-internal">
+											<span class="text-muted">Ex : 64</span>
+										</div>
+										<div class="form-group col-6">
+											<label for="kamera-depan-smartphone">Kamera Depan (MP) <span class="badge badge-warning">Wajib diisi</span></label>
+											<input requires type="number" class="form-control" id="kamera-depan-smartphone" name="kamera-depan">
+											<span class="text-muted">Ex : 50</span>
+										</div>
+										<div class="form-group col-6">
+											<label for="ukuran-layar-smartphone">Ukuran Layar (Inchi) <span class="badge badge-warning">Wajib diisi</span></label>
+											<input requires type="number" class="form-control" id="ukuran-layar-smartphone" step="0.1" name="ukuran-layar">
+											<span class="text-muted">Ex : 6,5</span>
+										</div>
+										<div class="col-12">
+											<button type="submit" class="btn btn-app bg-success"><i class="fas fa-plus"></i>add data</button>
+										</div>
+									</div>
+								</form>
+								<!-- #form-tambah-data -->
+							</div>
+						</div>
+					</div>
+					<!-- .col-9 -->
+					<div class="col-12">
+						<div class="card card-info card-outline">
+							<div class="card-header text-center">
+								<strong>Data Smartphone</strong>
+								<div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+							</div>
+							<div class="card-body">
+								<table id="table-smartphone" class="display table table-bordered table-striped text-center table-responsive" style="width:100%">
+									<thead>
+										<tr>
+											<th>Nama Smartphone</th>
+											<th>Harga Smartphone (Rupiah)</th>
+											<th>RAM Smartphone (GB)</th>
+											<th>Memori Internal Smartphone (GB)</th>
+											<th>Kamera Depan Smartphone (MP)</th>
+											<th>Ukuran Layar Smartphone (Inchi)</th>
+											<th>Aksi</th>
+										</tr>
+									</thead>
+									<tbody id="body-table-smartphone">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- col-12 -->
+					<div class="col-12">
+						<div class="card card-success">
+							<div class="card-header text-center">
+								<strong>Rekomendasi Smartphone dengan metode SAW</strong>
+								<div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+							</div>
+							<div class="card-body">
+								<table id="table-rekomendasi-smartphone" class="display table table-bordered table-striped text-center table-responsive" style="width:100%">
+									<thead>
+										<tr>
+											<th>No</th>
+											<th>Nilai perhitungan</th>
+											<th>Nama Smartphone</th>
+											<th>Harga Smartphone (Rupiah)</th>
+											<th>RAM Smartphone (GB)</th>
+											<th>Memori Internal Smartphone (GB)</th>
+											<th>Kamera Depan Smartphone (MP)</th>
+											<th>Ukuran Layar Smartphone (Inchi)</th>
+										</tr>
+									</thead>
+									<tbody id="body-table-rekomendasi-smartphone">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- col-12 -->
+        </div>
+        <!-- /.row -->
+      </div>
+			<!-- /.container-fluid -->
+			<div class="container-fluid">
+				<!-- Modal -->
+				<div class="modal fade" id="modal-edit-data">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">Edit Data</h4>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<form action="" id="form-edit-data">
+							<div class="modal-body">
+									<div class="row">
+										<div class="form-group col-6">
+											<label for="edit-harga-smartphone">Nama / Merk Smartphone</label>
+											<input type="text" class="form-control" id="edit-nama-smartphone" name="edit-nama">
+										</div>
+										<div class="form-group col-6">
+											<label for="edit-harga-smartphone">Harga (Juta Rupiah)</label>
+											<input type="number" class="form-control" id="edit-harga-smartphone" name="edit-harga">
+											<span class="text-muted">Ex : 2000000</span>
+										</div>
+										<div class="form-group col-6">
+											<label for="edit-ram-smartphone">RAM (GB)</span></label>
+											<input type="number" class="form-control" id="edit-ram-smartphone" name="edit-ram">
+											<span class="text-muted">Ex : 8</span>
+										</div>
+										<div class="form-group col-6">
+											<label for="edit-memori-internal-smartphone">Memori Internal (GB)</label>
+											<input type="number" class="form-control" id="edit-memori-internal-smartphone" name="edit-memori-internal">
+											<span class="text-muted">Ex : 64</span>
+										</div>
+										<div class="form-group col-6">
+											<label for="edit-kamera-depan-smartphone">Kamera Depan (MP)</label>
+											<input type="number" class="form-control" id="edit-kamera-depan-smartphone" name="edit-kamera-depan">
+											<span class="text-muted">Ex : 50</span>
+										</div>
+										<div class="form-group col-6">
+											<label for="edit-ukuran-layar-smartphone">Ukuran Layar (Inchi)</label>
+											<input type="number" class="form-control" id="edit-ukuran-layar-smartphone" step="0.1" name="edit-ukuran-layar">
+											<span class="text-muted">Ex : 6,5</span>
+										</div>
+										<input type="hidden" name="id-data-smartphone" id="id-edit-smartphone" value="">
+									</div>
+							</div>
+							<!-- modal-body -->
+							<div class="modal-footer justify-content-between">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-primary">Edit Data</button>
+							</div>
+							</form>
+							<!-- form-edit-data -->
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+				<!--end modal -->
+			</div>
+			<!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+	
+  {% include 'include/footer.html'%}
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+{% include 'include/script.html'%}
+<script>
+	$(document).ready(function(){
+
+		var Toast = Swal.mixin({
+			toast: true,
+			position: 'top-end',
+			showConfirmButton: false,
+			timer: 2500
+		});
+
+		$('#metode-spk').addClass('menu-open');
+    $('#metode-spk').children().addClass('active');
+		$('#metode-spk-saw').addClass('active');
+
+    $('.overlay').fadeOut('slow');
+
+		indexData();
+		indexRanking();
+
+		// Meng-handle pengiriman form pengunggahan file
+		$('#upload-form').on('submit', function(e) {
+			e.preventDefault();
+
+			// Menampilkan progress bar
+			$('.progress').show();
+
+			// Menggunakan FormData untuk mengirim file
+			var formData = new FormData(this);
+
+			$.ajax({
+				url: '/upload', // Ganti URL sesuai dengan URL endpoint server Anda
+				type: 'POST',
+				data: formData,
+				cache: false,
+				contentType: false,
+				processData: false,
+				xhr: function() {
+					// Menggunakan XMLHttpRequest untuk memantau progres pengunggahan
+					var xhr = new XMLHttpRequest();
+					xhr.upload.addEventListener('progress', function(e) {
+						if (e.lengthComputable) {
+								var progress = (e.loaded / e.total) * 100;
+								$('.progress-bar').css('width', progress + '%').attr('aria-valuenow', progress).text(progress.toFixed(2) + '%');
+						}
+					});
+					return xhr;
+				},
+				success: function(response) {
+					// Menyembunyikan progress bar setelah pengunggahan selesai
+					$('.progress').hide();
+					Swal.fire({
+						position: 'top-end',
+						icon: 'success',
+						title: response,
+						showConfirmButton: false,
+						timer: 4000
+					});
+				},
+				error: function(xhr, status, error) {
+					// Menyembunyikan progress bar dan menampilkan pesan error jika terjadi kesalahan
+					$('.progress').hide();
+					Swal.fire({
+						position: 'top-end',
+						icon: 'error',
+						title: xhr.status+'</br>'+xhr.responseText,
+						showConfirmButton: false,
+						timer: 4000
+					});
+				}
+			});
+		});
+
+		$('#form-tambah-data').submit(function(e){
+			e.preventDefault();
+			$.ajax({
+				type: 'POST',
+				url: '/tambah-data',
+				data: $(this).serialize(),
+				success: function(response){
+					if(response.status){
+						Swal.fire({
+							position: 'top-end',
+							icon: 'success',
+							title: response.msg,
+							showConfirmButton: false,
+							timer: 2500
+						});
+					}else{
+						Swal.fire({
+							position: 'top-end',
+							icon: 'error',
+							title: response.msg,
+							showConfirmButton: true,
+							timer: 2500
+						});
+					}
+					indexData();
+					indexRanking();
+					$('#form-tambah-data').trigger('reset');
+				},
+				error: function(error){
+					alert('Terjadi kesalahan saat menambahkan data!');
+				}
+			});
+    });
+		
+		$('#form-edit-data').submit(function(e){
+			e.preventDefault();
+			Swal.fire({
+				icon: 'warning',
+				title: 'Apakah anda yakin',
+				text: "akan mengedit data ini?",
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Ya, Edit',
+				
+			}).then((result) => {
+				if (result.isConfirmed) {
+					$.ajax({
+						type: 'POST',
+						url: '/edit-data',
+						data: $(this).serialize(),
+						success: function(response){
+							if(response.status){
+								Swal.fire({
+									position: 'top-end',
+									icon: 'success',
+									title: response.msg,
+									showConfirmButton: false,
+									timer: 2500
+								});
+							}else{
+								Swal.fire({
+									position: 'top-end',
+									icon: 'error',
+									title: response.msg,
+									showConfirmButton: true,
+									timer: 2500
+								});
+							}
+							indexData();
+							indexRanking();
+							$('#modal-edit-data').modal('hide');
+							$('#form-edit-data').trigger('reset');
+						},
+						error: function(error){
+							alert('Terjadi kesalahan saat mengedit data!');
+						}
+					});
+				}
+			});
+    });
+
+		function indexData() {
+			tableSmartphone = $('#table-smartphone');
+			if ($.fn.DataTable.isDataTable(tableSmartphone)) {
+				tableSmartphone.DataTable().destroy();
+			}
+			$.post( "/indexData", function( data ) {
+				if (data.status){
+					$('#body-table-smartphone').html(data.res);
+
+					//proses edit data
+					$('.btn-edit').on('click', function(){
+						id = $(this).attr('id');
+						
+						$.ajax({
+							type: 'POST',
+							url: '/get-one-data/' + id,
+							dataType: 'json',
+							beforeSend: ()=>{$('.overlay').fadeIn('slow')},
+							success: (response) => {
+								$('.overlay').fadeOut('slow');
+								if(response.status) {
+									data = response.data;
+									$('#id-edit-smartphone').val(String(data._id));
+									$('#edit-nama-smartphone').val(data.namaSmartphone);
+									$('#edit-harga-smartphone').val(parseInt(data.harga));
+									$('#edit-ram-smartphone').val(parseInt(data.ram));
+									$('#edit-kamera-depan-smartphone').val(parseInt(data.kameraDepan));
+									$('#edit-ukuran-layar-smartphone').val(parseFloat(data.ukuranLayar));
+									$('#modal-edit-data').modal('show');
+								}else{
+									Toast.fire({
+										position: 'center',
+										icon: 'error',
+										title: response.msg,
+										showConfirmButton: true,
+										timer: 2500
+									});
+								};
+							},
+							error: function(xhr) {
+								alert(xhr.responseText);
+							}
+						});
+					});
+
+					//hapus data
+					$('.btn-hapus').on('click', function(){
+						Swal.fire({
+							icon: 'warning',
+							title: 'Apakah anda yakin',
+							text: "akan menghapus data ini?",
+							showCancelButton: true,
+							confirmButtonColor: '#3085d6',
+							cancelButtonColor: '#d33',
+							confirmButtonText: 'Ya, hapus',
+							
+						}).then((result) => {
+							if (result.isConfirmed) {
+								id = $(this).attr('id');
+								$.ajax({
+									type: 'DELETE',
+									url: '/delete-one/' + id,
+									dataType: 'json',
+									success: function(response) {
+										if(response.status) {
+											Swal.fire({
+												position: 'top-end',
+												icon: 'success',
+												title: response.msg,
+												showConfirmButton: false,
+  											timer: 2500
+											});
+										}else{
+											Toast.fire({
+												position: 'center',
+												icon: 'error',
+												title: response.msg,
+												showConfirmButton: true,
+  											timer: 2500
+											});
+										}
+										indexData();
+										indexRanking();
+									},
+									error: function(xhr) {
+										alert(xhr.responseText);
+									}
+								});
+							}
+						});
+						
+					});
+					tableSmartphone.DataTable({"autoWidth": true});
+				}else{
+					text = `
+					<tr>
+						<td colspan="7">Data Tidak tersedia</td>
+					</tr>
+					`;
+					$('#body-table-smartphone').html( text );
+				}
+			}, "json");
+		};
+
+		function indexRanking(){
+			tableRekomendasiSmartphone = $('#table-rekomendasi-smartphone');
+			if ($.fn.DataTable.isDataTable(tableRekomendasiSmartphone)) {
+				tableRekomendasiSmartphone.DataTable().destroy();
+			}
+			$.post( "/indexRanking", function( data ) {
+				if (data.status){
+					no = 0;
+					text = '';
+
+					for (let i = 0; i < data.res.length; i++) {
+						text += `
+						<tr>
+							<td>${no+=1}</td>
+							<td>${data.res[i][0]}</td>
+							<td>${data.res[i][1]['namaSmartphone']}</td>
+							<td>${data.res[i][1]['harga']}</td>
+							<td>${data.res[i][1]['ram']}</td>
+							<td>${data.res[i][1]['memoriInternal']}</td>
+							<td>${data.res[i][1]['kameraDepan']}</td>
+							<td>${data.res[i][1]['ukuranLayar']}</td>
+						</tr>
+						`;
+					}
+					
+					$('#body-table-rekomendasi-smartphone').html( text );
+					tableRekomendasiSmartphone.DataTable({});
+				}else{
+					text = `
+					<tr>
+						<td colspan="8">Data Tidak tersedia</td>
+					</tr>
+					`;
+					$('#body-table-rekomendasi-smartphone').html( text );
+				}
+			}, "json");
+		};
+	});
+</script>

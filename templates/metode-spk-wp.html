@@ -1,0 +1,58 @@
+{% include 'include/head.html'%}
+{% include 'include/sidebar.html'%}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Weighted Product</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Metode SPK</a></li>
+              <li class="breadcrumb-item active"><a href="/metodewp">wp</a></li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="error-page">
+              <h2 class="headline text-warning">Coming Soon!</h2>
+              <div class="error-content">
+                <h3><i class="fas fa-exclamation-triangle text-warning"></i> Oops! The page you are looking for is not available yet.</h3>
+                <p>We are currently working on this page and it will be available soon. Please check back later.</p>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  {% include 'include/footer.html'%}
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+{% include 'include/script.html'%}
+<script>
+	$(document).ready(function(){
+		$('#metode-spk').addClass('menu-open');
+    $('#metode-spk').children().addClass('active');
+		$('#metode-spk-wp').addClass('active');
+	});
+</script>
