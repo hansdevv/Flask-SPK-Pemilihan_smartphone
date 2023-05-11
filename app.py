@@ -105,6 +105,7 @@ def edit_data():
 	nama = request.form['edit-nama']
 	harga = request.form['edit-harga']
 	ram = request.form['edit-ram']
+	memoriInternal = request.form['edit-memori-internal']
 	kamera_depan = request.form['edit-kamera-depan']
 	ukuran_layar = request.form['edit-ukuran-layar']
 
@@ -123,6 +124,7 @@ def edit_data():
 					'namaSmartphone': nama,
 					'harga': harga,
 					'ram': ram,
+					'memoriInternal': memoriInternal,
 					'kameraDepan': kamera_depan,
 					'ukuranLayar': ukuran_layar,
 				}
