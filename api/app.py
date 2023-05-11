@@ -395,5 +395,6 @@ def index_ranking():
 def methode_wp():
 	return render_template('metode-spk-wp.html')
 
-if __name__ == "__main__":
-	app.run(debug=True)
+# testing local
+# if __name__ == "__main__":
+# 	app.run(debug=True)
