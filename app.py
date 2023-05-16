@@ -23,11 +23,11 @@ headers = {
 
 app = Flask(__name__)
 # app.secret_key digunakan sebagai kunci rahasia untuk menandatangani cookie sesi dan mengamankan data sesi dari manipulasi.
-# app.secret_key = os.getenv('SECRET_KEY')
+app.secret_key = os.getenv('SECRET_KEY')
 
 @app.before_request
 def sesi():
-	session.permanent = True
+	# session.permanent = True
 	app.permanent_session_lifetime = timedelta(minutes=60)
 
 @app.errorhandler(404)
