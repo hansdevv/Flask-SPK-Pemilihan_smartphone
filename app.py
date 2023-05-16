@@ -27,8 +27,7 @@ app.secret_key = os.getenv('SECRET_KEY')
 
 @app.before_request
 def sesi():
-	# session.permanent = True
-	app.permanent_session_lifetime = timedelta(minutes=0.1)
+	app.permanent_session_lifetime = timedelta(minutes=60)
 
 @app.errorhandler(404)
 def page_not_found(e):
