@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, session, request, jsonify
+from flask import Flask, redirect, render_template, session, request, jsonify, url_for
 from datetime import timedelta
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
@@ -234,6 +234,14 @@ def login():
 		else:
 			msg = 'Username atau Password tidak ditemukan'
 	return render_template('login.html', msg = msg)
+
+@app.route('/logout')
+def logout():
+	# Menghapus data sesi
+	session.pop('username', None)
+	session.pop('password', None)
+	# Redirect ke halaman login atau halaman beranda
+	return redirect(url_for('login'))
 
 @app.route('/indexData', methods=['POST'])
 def index_data():
