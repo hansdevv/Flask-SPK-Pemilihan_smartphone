@@ -253,7 +253,8 @@ def index_data():
 			"dataSource": DATA_SOURCE,
 			"collection": COLLECTION,
 			"database": DATABASE,
-			"filter": {}
+			"filter": {},
+			"sort": {"_id": -1}
 		})
 		response = requests.request("POST", url, headers=headers, data=payload)
 		json_response = response.json()
@@ -272,12 +273,13 @@ def index_data():
 
 				text += f'''
 				<tr>
-				<td>{namaSmartphone}</td>
-				<td>{hargaSmartphone}</td>
-				<td>{ram}</td>
-				<td>{memoriInternal}</td>
-				<td>{kameraDepan}</td>
-				<td>{ukuranLayar}</td>
+					<td style="display: none;">{_id}</td>
+					<td>{namaSmartphone}</td>
+					<td>{hargaSmartphone}</td>
+					<td>{ram}</td>
+					<td>{memoriInternal}</td>
+					<td>{kameraDepan}</td>
+					<td>{ukuranLayar}</td>
 				<td>
 					<div class="button-group">
 						<button id="{_id}" class="btn btn-info btn-edit"><i class="fas fa-edit" title="Edit Data"></i></button>
@@ -384,6 +386,13 @@ def getAllDataTrainig():
 @app.route("/indexRanking", methods=['POST'])
 def index_ranking():
 	if 'username' and 'password' in session:
+		paramKriteria = request.get_json()
+		test = {}
+		j = 1
+		for i in paramKriteria:
+			test['C' + str(j)] = {'rating': i['rating'], 'atribut': i['atribut']}
+			j += 1
+		
 		status = False
 		res = []
 
@@ -393,14 +402,15 @@ def index_ranking():
 		if len(data) != 0:
 			status = True
 
-			kriteria = {
-				'C1' : {'rating' : 25, 'atribut' : 'cost'},
-				'C2' : {'rating' : 20, 'atribut' : 'benefit'},
-				'C3' : {'rating' : 20, 'atribut' : 'benefit'},
-				'C4' : {'rating' : 20, 'atribut' : 'benefit'},
-				'C5' : {'rating' : 15, 'atribut' : 'benefit'},
-				'C5' : {'rating' : 15, 'atribut' : 'benefit'}
-			}
+			# kriteria = {
+			# 	'C1' : {'rating' : 25, 'atribut' : 'cost'},
+			# 	'C2' : {'rating' : 20, 'atribut' : 'benefit'},
+			# 	'C3' : {'rating' : 20, 'atribut' : 'benefit'},
+			# 	'C4' : {'rating' : 20, 'atribut' : 'benefit'},
+			# 	'C5' : {'rating' : 15, 'atribut' : 'benefit'}
+			# }
+
+			kriteria = test
 
 			# mendapatkan rating kriteria 
 			rating =[kriteria[i]['rating'] for i in kriteria.keys()]
@@ -464,7 +474,7 @@ def index_ranking():
 				cek = getData(i[1])
 				res.append([i[0],cek])
 
-		return jsonify({'status': status,'res': res,})
+		return jsonify({'status': status,'res': res})
 	return redirect('/login')
 
 @app.route("/metodewp")
