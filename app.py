@@ -373,11 +373,11 @@ def getAllDataTrainig():
 			documents = json_response['documents']
 			for doc in documents:
 				data[doc['_id']]={
-					'C1':doc['harga'],
-					'C2':doc['ram'],
-					'C3':doc['memoriInternal'],
-					'C4':doc['kameraDepan'],
-					'C5':doc['ukuranLayar'],
+					'C1':int(doc['harga']),
+					'C2':int(doc['ram']),
+					'C3':int(doc['memoriInternal']),
+					'C4':float(doc['kameraDepan']),
+					'C5':float(doc['ukuranLayar']),
 				}
 				_id.append({doc['_id'] : doc['namaSmartphone']})
 			return {'data':data, 'id':_id}
@@ -444,7 +444,8 @@ def index_ranking():
 				for key, val in vals.items():
 					#cek atribut apakah cost / benefit
 					if kriteria[key]['atribut'] == 'benefit':
-						n = float(val)/float(C_MaxMin[i]) #menyimpan normalisasi dlam var n
+						#n = float(val)/float(C_MaxMin[i]) #menyimpan normalisasi dlam var n
+						n = val/C_MaxMin[i] #menyimpan normalisasi dlam var n
 					else:
 						C_MaxMin.append(min(C))
 					
@@ -455,7 +456,7 @@ def index_ranking():
 				#simpan hasil normalisasi
 				norms.append(norm)
 				#simpan vn ke dalam vektor v
-				v.append(vn)
+				v.append(round(vn,3))
 			
 			# #langkah perangkingan
 			rank = {}
@@ -474,7 +475,7 @@ def index_ranking():
 				cek = getData(i[1])
 				res.append([i[0],cek])
 
-		return jsonify({'status': status,'res': res})
+		return jsonify({'status': status,'res': res,})
 	return redirect('/login')
 
 @app.route("/metodewp")

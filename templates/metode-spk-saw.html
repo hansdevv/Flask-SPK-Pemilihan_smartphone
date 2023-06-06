@@ -24,11 +24,11 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
+				<div class="overlay">
+					<div class="loader"></div>
+				</div>
         <div class="row">
-          <div class="overlay">
-            <div class="loader"></div>
-          </div>
-          <div class="col-2">
+          <div class="col-md-3">
 						<div class="card card-success collapsed-card">
 							<div class="card-header">
 								<strong>Tambah data dengan file</strong>
@@ -69,8 +69,8 @@
 							</div> -->
 						</div>
           </div>
-          <!-- /.col-6 -->
-					<div class="col-9">
+					<!-- col-2 -->
+					<div class="col-md-9">
 						<div class="card card-info text-center collapsed-card">
 							<div class="card-header">
 								<strong>Tambah Data</strong>
@@ -83,33 +83,33 @@
 							<div class="card-body">
 								<form action="" id="form-tambah-data">
 									<div class="row">
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="harga-smartphone">Nama / Merk Smartphone<span class="badge badge-warning">Wajib diisi</span></label>
 											<input required type="text" class="form-control" id="nama-smartphone" name="nama">
 										</div>
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="harga-smartphone">Harga (Juta Rupiah) <span class="badge badge-warning">Wajib diisi</span></label>
 											<input required type="number" class="form-control" id="harga-smartphone" name="harga">
 											<span class="text-muted">Ex : 2000000</span>
 										</div>
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="ram-smartphone">RAM (GB) <span class="badge badge-warning">Wajib diisi</span></label>
 											<input required type="number" class="form-control" id="ram-smartphone" name="ram">
 											<span class="text-muted">Ex : 8</span>
 										</div>
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="memori-internal-smartphone">Memori Internal (GB) <span class="badge badge-warning">Wajib diisi</span></label>
 											<input required type="number" class="form-control" id="memori-internal-smartphone" name="memori-internal">
 											<span class="text-muted">Ex : 64</span>
 										</div>
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="kamera-depan-smartphone">Kamera Depan (MP) <span class="badge badge-warning">Wajib diisi</span></label>
-											<input required type="number" class="form-control" id="kamera-depan-smartphone" name="kamera-depan">
+											<input required type="number" class="form-control" id="kamera-depan-smartphone" step="0.01" name="kamera-depan">
 											<span class="text-muted">Ex : 50</span>
 										</div>
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="ukuran-layar-smartphone">Ukuran Layar (Inchi) <span class="badge badge-warning">Wajib diisi</span></label>
-											<input required type="number" class="form-control" id="ukuran-layar-smartphone" step="0.1" name="ukuran-layar">
+											<input required type="number" class="form-control" id="ukuran-layar-smartphone" step="0.01" name="ukuran-layar">
 											<span class="text-muted">Ex : 6,5</span>
 										</div>
 										<div class="col-12">
@@ -178,27 +178,27 @@
 											<div class="callout callout-info">
 												<h5 class="text-center"><strong>Bobot Kriteria</strong></h5>
 												<div class="row">
-													<div class="form-group col-2">
+													<div class="form-group col-md-2">
 														<label for="kriteria-1">Harga</label>
 														<input required type="number" class="form-control kriteria control-kriteria" value="25" id="kriteria-1" name="kriteria-1" min="0" max="100" step="0.1">
 														<span class="text-muted">Default : 25%</span>
 													</div>
-													<div class="form-group col-2">
+													<div class="form-group col-md-2">
 														<label for="kriteria-2">RAM</label>
 														<input required type="number" class="form-control kriteria control-kriteria" value="20" id="kriteria-2" name="kriteria-2" min="0" max="100" step="0.1">
 														<span class="text-muted">Default : 20%</span>
 													</div>
-													<div class="form-group col-2">
+													<div class="form-group col-md-2">
 														<label for="kriteria-3">Memori Internal</label>
 														<input required type="number" class="form-control kriteria control-kriteria" value="20" id="kriteria-3" name="kriteria-3" min="0" max="100" step="0.1">
 														<span class="text-muted">Default : 20%</span>
 													</div>
-													<div class="form-group col-2">
+													<div class="form-group col-md-2">
 														<label for="kriteria-4">Kamera Depan</label>
-														<input required type="number" class="form-control kriteria control-kriteria" value="14" id="kriteria-4" name="kriteria-4" min="0" max="100" step="0.1">
-														<span class="text-muted">Default : 15%</span>
+														<input required type="number" class="form-control kriteria control-kriteria" value="20" id="kriteria-4" name="kriteria-4" min="0" max="100" step="0.1">
+														<span class="text-muted">Default : 20%</span>
 													</div>
-													<div class="form-group col-2">
+													<div class="form-group col-md-2">
 														<label for="kriteria-5">Ukuran Layar</label>
 														<input required type="number" class="form-control kriteria control-kriteria" value="15" id="kriteria-5" name="kriteria-5" min="0" max="100" step="0.1">
 														<span class="text-muted">Default : 15%</span>
@@ -210,7 +210,7 @@
 											<div class="callout callout-info">
 												<h5 class="text-center"><strong>Type Kriteria</strong></h5>
 												<div class="row">
-													<div class="form-group col-2">
+													<div class="form-group col-md-2">
 														<label>Type Harga</label>
 														<select class="form-control control-kriteria" name="type-harga" id="type-harga">
 															<option value="cost" selected>cost</option>
@@ -218,7 +218,7 @@
 														</select>
 														<span class="text-muted">Default : cost</span>
 													</div>
-													<div class="form-group col-2">
+													<div class="form-group col-md-2">
 														<label>Type RAM</label>
 														<select class="form-control control-kriteria" name="type-ram" id="type-ram">
 															<option value="cost">cost</option>
@@ -226,7 +226,7 @@
 														</select>
 														<span class="text-muted">Default : benefit</span>
 													</div>
-													<div class="form-group col-2">
+													<div class="form-group col-md-2">
 														<label>Type Memori Internal</label>
 														<select class="form-control control-kriteria" name="type-memori-internal" id="type-memori-internal">
 															<option value="cost">cost</option>
@@ -234,7 +234,7 @@
 														</select>
 														<span class="text-muted">Default : benefit</span>
 													</div>
-													<div class="form-group col-2">
+													<div class="form-group col-md-2">
 														<label>Type Kamera Depan</label>
 														<select class="form-control control-kriteria" name="type-kamera" id="type-kamera">
 															<option value="cost">cost</option>
@@ -242,7 +242,7 @@
 														</select>
 														<span class="text-muted">Default : benefit</span>
 													</div>
-													<div class="form-group col-2">
+													<div class="form-group col-md-2">
 														<label>Type Ukuran Layar</label>
 														<select class="form-control control-kriteria" name="type-ukuran-layar" id="type-ukuran-layar">
 															<option value="cost">cost</option>
@@ -297,33 +297,33 @@
 							<form action="" id="form-edit-data">
 							<div class="modal-body">
 									<div class="row">
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="edit-harga-smartphone">Nama / Merk Smartphone</label>
 											<input type="text" class="form-control" id="edit-nama-smartphone" name="edit-nama">
 										</div>
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="edit-harga-smartphone">Harga (Juta Rupiah)</label>
 											<input type="number" class="form-control" id="edit-harga-smartphone" name="edit-harga">
 											<span class="text-muted">Ex : 2000000</span>
 										</div>
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="edit-ram-smartphone">RAM (GB)</span></label>
 											<input type="number" class="form-control" id="edit-ram-smartphone" name="edit-ram">
 											<span class="text-muted">Ex : 8</span>
 										</div>
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="edit-memori-internal-smartphone">Memori Internal (GB)</label>
 											<input type="number" class="form-control" id="edit-memori-internal-smartphone" name="edit-memori-internal">
 											<span class="text-muted">Ex : 64</span>
 										</div>
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="edit-kamera-depan-smartphone">Kamera Depan (MP)</label>
-											<input type="number" class="form-control" id="edit-kamera-depan-smartphone" name="edit-kamera-depan">
+											<input type="number" class="form-control" id="edit-kamera-depan-smartphone" step="0.01" name="edit-kamera-depan">
 											<span class="text-muted">Ex : 50</span>
 										</div>
-										<div class="form-group col-6">
+										<div class="form-group col-md-6">
 											<label for="edit-ukuran-layar-smartphone">Ukuran Layar (Inchi)</label>
-											<input type="number" class="form-control" id="edit-ukuran-layar-smartphone" step="0.1" name="edit-ukuran-layar">
+											<input type="number" class="form-control" id="edit-ukuran-layar-smartphone" step="0.01" name="edit-ukuran-layar">
 											<span class="text-muted">Ex : 6,5</span>
 										</div>
 										<input type="hidden" name="id-data-smartphone" id="id-edit-smartphone" value="">
@@ -694,5 +694,6 @@
 				},
 			});
 		};
+	
 	});
 </script>
