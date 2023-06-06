@@ -30,17 +30,17 @@
               <div class="card-header p-0 pt-1">
                 <div class="card-tools m-2">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
                   </button>
                 </div>
                 <ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#alternatif" data-toggle="tab">Alternatif</a></li>
-                  <!-- <li class="nav-item"><a class="nav-link" href="#kriteria" data-toggle="tab">Kriteria</a></li> -->
+                  <li class="nav-item"><a class="nav-link" href="#kriteria" data-toggle="tab">bobot & atribut</a></li>
                   <li class="nav-item"><a class="nav-link" href="#perhitungan-wp" data-toggle="tab">Perhitungan WP</a></li>
                 </ul>
               </div>
               <!-- /.card-header -->
-              <div class="card-body">
+              <div class="card-body p-1">
                 <div class="tab-content">
                   <div class="active tab-pane animate__animated animate__zoomInUp" id="alternatif">
                     <div class="row">
@@ -76,165 +76,166 @@
                     </div>
                   </div>
                   <!-- /.tab-pane -->
-                  <!-- <div class="tab-pane animate__animated animate__zoomInUp" id="kriteria">
-                    
-                  </div> -->
+                  <div class="tab-pane animate__animated animate__zoomInUp" id="kriteria">
+                    <div class="row">
+                      <div class="container-fluid">
+                        <div class="card">
+                          <div class="card-header border-0">
+                            <h5 class="card-title"><strong>Bobot Kriteria</strong></h5>
+                            <div class="card-tools">
+                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <div class="callout callout-info">
+                              <div class="row">
+                                <div class="form-group col-md-2">
+                                  <label for="kriteria-1">Harga</label>
+                                  <input required type="number" class="form-control kriteria control-kriteria" value="25" id="kriteria-1" name="kriteria-1" min="0" max="100" step="0.1">
+                                  <span class="text-muted">Default : 25%</span>
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label for="kriteria-2">RAM</label>
+                                  <input required type="number" class="form-control kriteria control-kriteria" value="20" id="kriteria-2" name="kriteria-2" min="0" max="100" step="0.1">
+                                  <span class="text-muted">Default : 20%</span>
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label for="kriteria-3">Memori Internal</label>
+                                  <input required type="number" class="form-control kriteria control-kriteria" value="20" id="kriteria-3" name="kriteria-3" min="0" max="100" step="0.1">
+                                  <span class="text-muted">Default : 20%</span>
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label for="kriteria-4">Kamera Depan</label>
+                                  <input required type="number" class="form-control kriteria control-kriteria" value="20" id="kriteria-4" name="kriteria-4" min="0" max="100" step="0.1">
+                                  <span class="text-muted">Default : 20%</span>
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label for="kriteria-5">Ukuran Layar</label>
+                                  <input required type="number" class="form-control kriteria control-kriteria" value="15" id="kriteria-5" name="kriteria-5" min="0" max="100" step="0.1">
+                                  <span class="text-muted">Default : 15%</span>
+                                </div>
+                              </div>
+                              
+                            </div>
+                            <!-- callout-info -->
+                          </div>
+                        </div>
+                        <!-- card -->
+                      </div>
+                      <!-- container-fluid -->
+                      <div class="container-fluid">
+                        <div class="card">
+                          <div class="card-header border-0">
+                            <h5 class="card-title"><strong>Type Kriteria</strong></h5>
+                            <div class="card-tools">
+                              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <div class="callout callout-info">
+                              <div class="row">
+                                <div class="form-group col-md-2">
+                                  <label>Type Harga</label>
+                                  <select class="form-control select select2 control-kriteria" name="type-harga" id="type-harga" style="width: 100%;">
+                                    <option value="cost" selected>cost</option>
+                                    <option value="benefit">benefit</option>
+                                  </select>
+                                  <span class="text-muted">Default : cost</span>
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label>Type RAM</label>
+                                  <select class="form-control control-kriteria" name="type-ram" id="type-ram">
+                                    <option value="cost">cost</option>
+                                    <option value="benefit" selected>benefit</option>
+                                  </select>
+                                  <span class="text-muted">Default : benefit</span>
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label>Type Memori Internal</label>
+                                  <select class="form-control control-kriteria" name="type-memori-internal" id="type-memori-internal">
+                                    <option value="cost">cost</option>
+                                    <option value="benefit" selected>benefit</option>
+                                  </select>
+                                  <span class="text-muted">Default : benefit</span>
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label>Type Kamera Depan</label>
+                                  <select class="form-control control-kriteria" name="type-kamera" id="type-kamera">
+                                    <option value="cost">cost</option>
+                                    <option value="benefit"selected>benefit</option>
+                                  </select>
+                                  <span class="text-muted">Default : benefit</span>
+                                </div>
+                                <div class="form-group col-md-2">
+                                  <label>Type Ukuran Layar</label>
+                                  <select class="form-control control-kriteria" name="type-ukuran-layar" id="type-ukuran-layar">
+                                    <option value="cost">cost</option>
+                                    <option value="benefit" selected>benefit</option>
+                                  </select>
+                                  <span class="text-muted">Default : benefit</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- card -->
+                      </div>
+                      <!-- container-fluid -->
+                    </div>
+                  </div>
                   <!-- /.tab-pane -->
 
                   <div class="tab-pane animate__animated animate__zoomInUp" id="perhitungan-wp">
                     <div class="timeline timeline-inverse">
                       <!-- timeline time label -->
-                      <div class="time-label">
+                      <!-- <div class="time-label">
                         <span class="bg-warning">
                           Penentuan Besar Kriteria
                         </span>
-                      </div>
+                      </div> -->
                       <!-- /.timeline-label -->
                       <!-- timeline item -->
-                      <div>
+                      <!-- <div>
                         <i class="fas fa-rocket bg-warning"></i>
 
                         <div class="timeline-item">
                           <h3 class="timeline-header border-0"></h3>
 
                           <div class="timeline-body">
-                            <div class="container-fluid">
-                              <div class="card">
-                                <div class="card-header border-0">
-                                  <h5 class="card-title"><strong>Bobot Kriteria</strong></h5>
-                                  <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                      <i class="fas fa-minus"></i>
-                                    </button>
-                                  </div>
-                                </div>
-                                <div class="card-body">
-                                  <div class="callout callout-info">
-                                    <div class="row">
-                                      <div class="form-group col-md-2">
-                                        <label for="kriteria-1">Harga</label>
-                                        <input required type="number" class="form-control kriteria control-kriteria" value="25" id="kriteria-1" name="kriteria-1" min="0" max="100" step="0.1">
-                                        <span class="text-muted">Default : 25%</span>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                        <label for="kriteria-2">RAM</label>
-                                        <input required type="number" class="form-control kriteria control-kriteria" value="20" id="kriteria-2" name="kriteria-2" min="0" max="100" step="0.1">
-                                        <span class="text-muted">Default : 20%</span>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                        <label for="kriteria-3">Memori Internal</label>
-                                        <input required type="number" class="form-control kriteria control-kriteria" value="20" id="kriteria-3" name="kriteria-3" min="0" max="100" step="0.1">
-                                        <span class="text-muted">Default : 20%</span>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                        <label for="kriteria-4">Kamera Depan</label>
-                                        <input required type="number" class="form-control kriteria control-kriteria" value="20" id="kriteria-4" name="kriteria-4" min="0" max="100" step="0.1">
-                                        <span class="text-muted">Default : 20%</span>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                        <label for="kriteria-5">Ukuran Layar</label>
-                                        <input required type="number" class="form-control kriteria control-kriteria" value="15" id="kriteria-5" name="kriteria-5" min="0" max="100" step="0.1">
-                                        <span class="text-muted">Default : 15%</span>
-                                      </div>
-                                    </div>
-                                    
-                                  </div>
-                                  <!-- callout-info -->
-                                </div>
-                              </div>
-                              <!-- card -->
-                            </div>
+                            
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                       <!-- END timeline item -->
                       <!-- timeline time label -->
-                      <div class="time-label">
+                      <!-- <div class="time-label">
                         <span class="bg-warning">
                           Penentuan Jenis Kriteria
                         </span>
-                      </div>
+                      </div> -->
                       <!-- /.timeline-label -->
                       <!-- timeline item -->
-                      <div>
+                      <!-- <div>
                         <i class="fas fa-globe bg-warning"></i>
 
                         <div class="timeline-item">
                           <h3 class="timeline-header border-0"></h3>
 
                           <div class="timeline-body">
-                            <div class="container-fluid">
-                              <div class="card">
-                                <div class="card-header border-0">
-                                  <h5 class="card-title"><strong>Type Kriteria</strong></h5>
-                                  <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                      <i class="fas fa-minus"></i>
-                                    </button>
-                                  </div>
-                                </div>
-                                <div class="card-body">
-                                  <div class="callout callout-info">
-                                    <div class="row">
-                                      <div class="form-group col-md-2">
-                                        <label>Type Harga</label>
-                                        <select class="form-control select select2 control-kriteria" name="type-harga" id="type-harga" style="width: 100%;">
-                                          <option value="cost" selected>cost</option>
-                                          <option value="benefit">benefit</option>
-                                        </select>
-                                        <span class="text-muted">Default : cost</span>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                        <label>Type RAM</label>
-                                        <select class="form-control control-kriteria" name="type-ram" id="type-ram">
-                                          <option value="cost">cost</option>
-                                          <option value="benefit" selected>benefit</option>
-                                        </select>
-                                        <span class="text-muted">Default : benefit</span>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                        <label>Type Memori Internal</label>
-                                        <select class="form-control control-kriteria" name="type-memori-internal" id="type-memori-internal">
-                                          <option value="cost">cost</option>
-                                          <option value="benefit" selected>benefit</option>
-                                        </select>
-                                        <span class="text-muted">Default : benefit</span>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                        <label>Type Kamera Depan</label>
-                                        <select class="form-control control-kriteria" name="type-kamera" id="type-kamera">
-                                          <option value="cost">cost</option>
-                                          <option value="benefit"selected>benefit</option>
-                                        </select>
-                                        <span class="text-muted">Default : benefit</span>
-                                      </div>
-                                      <div class="form-group col-md-2">
-                                        <label>Type Ukuran Layar</label>
-                                        <select class="form-control control-kriteria" name="type-ukuran-layar" id="type-ukuran-layar">
-                                          <option value="cost">cost</option>
-                                          <option value="benefit" selected>benefit</option>
-                                        </select>
-                                        <span class="text-muted">Default : benefit</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <!-- card -->
-                            </div>
+                            
                           </div>
-                          <!-- <div class="timeline-footer">
-                            <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                          </div> -->
                         </div>
-                      </div>
+                      </div> -->
                       <!-- END timeline item -->
-                      <div class="time-label">
+                      <!-- <div class="time-label">
                         <span class="bg-success">
                           Perangkingan
                         </span>
-                      </div>
+                      </div> -->
                       <!-- /.timeline-label -->
                       <!-- timeline item -->
                       <div>
@@ -244,25 +245,39 @@
                           <!-- <span class="time"><i class="far fa-clock"></i> 5 mins ago</span> -->
 
                           <h3 class="timeline-header border-0 text-center"></h3>
-                          <div class="timeline-body">
-                            <div class="m-0 p-0 table-responsive">
-                              <table id="table-rekomendasi-smartphone" class="table table-bordered table-hover text-center" style="width: 100%;">
-                                <thead>
-                                  <tr>
-                                    <th>Ranking</th>
-                                    <th>Nilai perhitungan</th>
-                                    <th>Nama Smartphone</th>
-                                    <th>Harga Smartphone (Rupiah)</th>
-                                    <th>RAM Smartphone (GB)</th>
-                                    <th>Memori Internal Smartphone (GB)</th>
-                                    <th>Kamera Depan Smartphone (MP)</th>
-                                    <th>Ukuran Layar Smartphone (Inchi)</th>
-                                  </tr>
-                                </thead>
-                                <tbody id="body-table-rekomendasi-smartphone">
-              
-                                </tbody>
-                              </table>
+                          <div class="timeline-body p-0">
+                            <div class="container-fluid">
+                              <div class="card">
+                                <div class="card-header border-0">
+                                  <h5 class="card-title"><strong>Hasil Perhitungan dan Perangkingan</strong></h5>
+                                  <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                      <i class="fas fa-minus"></i>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div class="card-body">
+                                  <div class="m-0 p-0 table-responsive">
+                                    <table id="table-rekomendasi-smartphone" class="table table-bordered table-hover text-center" style="width: 100%;">
+                                      <thead>
+                                        <tr>
+                                          <th>Ranking</th>
+                                          <th>Nilai perhitungan</th>
+                                          <th>Nama Smartphone</th>
+                                          <th>Harga Smartphone (Rupiah)</th>
+                                          <th>RAM Smartphone (GB)</th>
+                                          <th>Memori Internal Smartphone (GB)</th>
+                                          <th>Kamera Depan Smartphone (MP)</th>
+                                          <th>Ukuran Layar Smartphone (Inchi)</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody id="body-table-rekomendasi-smartphone">
+                    
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -442,7 +457,7 @@
 				success: function(response){
 					if(response.status){
 						Swal.fire({
-							position: 'top-end',
+							position: 'center',
 							icon: 'success',
 							title: response.msg,
 							showConfirmButton: false,
@@ -450,7 +465,7 @@
 						});
 					}else{
 						Swal.fire({
-							position: 'top-end',
+							position: 'center',
 							icon: 'error',
 							title: response.msg,
 							showConfirmButton: true,
@@ -460,6 +475,7 @@
 					indexData();
 					indexRank();
 					$('#form-tambah-data').trigger('reset');
+          $('#modal-tambah-data').modal('hide');
 				},
 				error: function(error){
 					alert('Terjadi kesalahan saat menambahkan data!');
@@ -487,7 +503,7 @@
 						success: function(response){
 							if(response.status){
 								Swal.fire({
-									position: 'top-end',
+									position: 'center',
 									icon: 'success',
 									title: response.msg,
 									showConfirmButton: false,
@@ -495,7 +511,7 @@
 								});
 							}else{
 								Swal.fire({
-									position: 'top-end',
+									position: 'center',
 									icon: 'error',
 									title: response.msg,
 									showConfirmButton: true,
@@ -586,7 +602,7 @@
 									success: function(response) {
 										if(response.status) {
 											Swal.fire({
-												position: 'top-end',
+												position: 'center',
 												icon: 'success',
 												title: response.msg,
 												showConfirmButton: false,
@@ -652,7 +668,7 @@
 			];
 			$.ajax({
 				type: "POST",
-				url: '/indexRanking',
+				url: '/indexRankWp',
 				contentType:"application/json",
 				data: JSON.stringify(param),
 				dataType: 'json',
@@ -687,7 +703,11 @@
 								{ "width": "15%" },
 								{ "width": "15%" },
 								{ "width": "10%" },
-							]
+							],
+              dom: 'Bfrtip',
+              buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+              ],
 						});
 					}else{
 						text = `

@@ -133,23 +133,29 @@
                 </div>
 							</div>
 							<div class="card-body">
-								<table id="table-smartphone" class="display table table-bordered table-striped text-center table-responsive" style="width:100%">
-									<thead>
-										<tr>
-											<th style="display: none;">_id</th>
-											<th>Nama Smartphone</th>
-											<th>Harga Smartphone (Rupiah)</th>
-											<th>RAM Smartphone (GB)</th>
-											<th>Memori Internal Smartphone (GB)</th>
-											<th>Kamera Depan Smartphone (MP)</th>
-											<th>Ukuran Layar Smartphone (Inchi)</th>
-											<th>Aksi</th>
-										</tr>
-									</thead>
-									<tbody id="body-table-smartphone">
-
-									</tbody>
-								</table>
+								<div class="card">
+									<div class="card-body">
+										<div class="m-0 p-0 table-responsive">
+											<table id="table-smartphone" class="table table-bordered table-hover text-center" style="width:100%">
+												<thead>
+													<tr>
+														<th style="display: none;">_id</th>
+														<th>Nama Smartphone</th>
+														<th>Harga Smartphone (Rupiah)</th>
+														<th>RAM Smartphone (GB)</th>
+														<th>Memori Internal Smartphone (GB)</th>
+														<th>Kamera Depan Smartphone (MP)</th>
+														<th>Ukuran Layar Smartphone (Inchi)</th>
+														<th>Aksi</th>
+													</tr>
+												</thead>
+												<tbody id="body-table-smartphone">
+			
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -256,24 +262,28 @@
 									</div>
 									<!-- card -->
 								</div>
-								<div class="container-fluid">
-									<table id="table-rekomendasi-smartphone" class="display table table-bordered table-striped text-center table-responsive" style="width:100%">
-										<thead>
-											<tr>
-												<th>Ranking</th>
-												<th>Nilai perhitungan</th>
-												<th>Nama Smartphone</th>
-												<th>Harga Smartphone (Rupiah)</th>
-												<th>RAM Smartphone (GB)</th>
-												<th>Memori Internal Smartphone (GB)</th>
-												<th>Kamera Depan Smartphone (MP)</th>
-												<th>Ukuran Layar Smartphone (Inchi)</th>
-											</tr>
-										</thead>
-										<tbody id="body-table-rekomendasi-smartphone">
-	
-										</tbody>
-									</table>
+								<div class="card">
+									<div class="card-body">
+										<div class="m-0 p-0 table-responsive">
+											<table id="table-rekomendasi-smartphone" class="table table-bordered table-hover text-center" style="width:100%">
+												<thead>
+													<tr>
+														<th>Ranking</th>
+														<th>Nilai perhitungan</th>
+														<th>Nama Smartphone</th>
+														<th>Harga Smartphone (Rupiah)</th>
+														<th>RAM Smartphone (GB)</th>
+														<th>Memori Internal Smartphone (GB)</th>
+														<th>Kamera Depan Smartphone (MP)</th>
+														<th>Ukuran Layar Smartphone (Inchi)</th>
+													</tr>
+												</thead>
+												<tbody id="body-table-rekomendasi-smartphone">
+			
+												</tbody>
+											</table>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -360,7 +370,7 @@
 
 		var Toast = Swal.mixin({
 			toast: true,
-			position: 'top-end',
+			position: 'center',
 			showConfirmButton: false,
 			timer: 2500
 		});
@@ -406,7 +416,7 @@
 					// Menyembunyikan progress bar setelah pengunggahan selesai
 					$('.progress').hide();
 					Swal.fire({
-						position: 'top-end',
+						position: 'center',
 						icon: 'success',
 						title: response,
 						showConfirmButton: false,
@@ -417,7 +427,7 @@
 					// Menyembunyikan progress bar dan menampilkan pesan error jika terjadi kesalahan
 					$('.progress').hide();
 					Swal.fire({
-						position: 'top-end',
+						position: 'center',
 						icon: 'error',
 						title: xhr.status+'</br>'+xhr.responseText,
 						showConfirmButton: false,
@@ -436,7 +446,7 @@
 				success: function(response){
 					if(response.status){
 						Swal.fire({
-							position: 'top-end',
+							position: 'center',
 							icon: 'success',
 							title: response.msg,
 							showConfirmButton: false,
@@ -444,7 +454,7 @@
 						});
 					}else{
 						Swal.fire({
-							position: 'top-end',
+							position: 'center',
 							icon: 'error',
 							title: response.msg,
 							showConfirmButton: true,
@@ -481,7 +491,7 @@
 						success: function(response){
 							if(response.status){
 								Swal.fire({
-									position: 'top-end',
+									position: 'center',
 									icon: 'success',
 									title: response.msg,
 									showConfirmButton: false,
@@ -489,7 +499,7 @@
 								});
 							}else{
 								Swal.fire({
-									position: 'top-end',
+									position: 'center',
 									icon: 'error',
 									title: response.msg,
 									showConfirmButton: true,
@@ -580,7 +590,7 @@
 									success: function(response) {
 										if(response.status) {
 											Swal.fire({
-												position: 'top-end',
+												position: 'center',
 												icon: 'success',
 												title: response.msg,
 												showConfirmButton: false,
@@ -681,7 +691,11 @@
 								{ "width": "15%" },
 								{ "width": "15%" },
 								{ "width": "10%" },
-							]
+							],
+							dom: 'Bfrtip',
+              buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+              ],
 						});
 					}else{
 						text = `

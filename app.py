@@ -402,14 +402,6 @@ def index_ranking():
 		if len(data) != 0:
 			status = True
 
-			# kriteria = {
-			# 	'C1' : {'rating' : 25, 'atribut' : 'cost'},
-			# 	'C2' : {'rating' : 20, 'atribut' : 'benefit'},
-			# 	'C3' : {'rating' : 20, 'atribut' : 'benefit'},
-			# 	'C4' : {'rating' : 20, 'atribut' : 'benefit'},
-			# 	'C5' : {'rating' : 15, 'atribut' : 'benefit'}
-			# }
-
 			kriteria = test
 
 			# mendapatkan rating kriteria 
@@ -464,6 +456,73 @@ def index_ranking():
 			for key in data.keys():
 				rank[key] = v[i]
 				i+=1
+
+			sorted_rank = sorted(
+				[
+					(value, key) for (key, value) in rank.items()
+				], reverse=True
+			)
+
+			for i in sorted_rank:
+				cek = getData(i[1])
+				res.append([i[0],cek])
+
+		return jsonify({'status': status,'res': res,})
+	return redirect('/login')
+
+@app.route("/indexRankWp", methods=['POST'])
+def index_rank_wp():
+	if 'username' and 'password' in session:
+		paramKriteria = request.get_json()
+		test = {}
+		j = 1
+		for i in paramKriteria:
+			test['C' + str(j)] = {'rating': i['rating'], 'atribut': i['atribut']}
+			j += 1
+		
+		status = False
+		res = []
+
+		allData = getAllDataTrainig()
+		data = allData["data"]
+
+		if len(data) != 0:
+			status = True
+
+			kriteria = test
+
+			# mendapatkan rating kriteria 
+			rating =[kriteria[i]['rating'] for i in kriteria.keys()]
+
+			# normalisasi bobot 
+			bobot = [val/sum(rating) for val in rating]
+
+			# langkah untuk melakukan perhitungan dengan metode WP
+			s = [] # list untuk menyimpan matrix normalisasi 
+			for vals in data.values():
+				i = 0
+				sn = 1
+				# langkah mendapatkan atribut kriteria
+				for key, val in vals.items():
+					if kriteria[key]['atribut'] == 'benefit': 
+						sn *=pow(val, bobot[i])
+					else:
+						sn *=pow(val, -bobot[i])
+					i += 1
+
+				s.append(sn)
+			
+			#perangkingan
+			v = [] # list untuk menyimpan vektor v 
+			rank = {} #dic untuk menyimpan rangking 
+			i = 0
+			for key in data.keys():
+				nilaiV = s[i]/sum(s)
+				v.append(round(nilaiV,3))
+				rank[key] =v[i]
+				i +=1
+			
+			sorted_rank = sorted([(value, key) for (key,value) in rank.items()], reverse=True)
 
 			sorted_rank = sorted(
 				[
